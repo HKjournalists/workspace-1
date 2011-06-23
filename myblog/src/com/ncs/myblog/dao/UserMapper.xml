@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ncs.myblog.dao.UserMapper">
+
+  <select id="getById" parameterType="long" resultType="user">
+  	select id, username, password, isAdmin, create_time as createTime from user where id = #{id}
+  </select>
+  
+  <select id="getByName" parameterType="string" resultType="user">
+  	select id, username, password, isAdmin, create_time as createTime from user where username = #{name}
+  </select>
+  
+  <insert id="insert" parameterType="user" useGeneratedKeys="true" keyProperty="id">
+  	insert into user(id, username, password, isAdmin, create_time)
+  		      values(#{id}, #{username}, #{password}, 0, CURRENT_TIMESTAMP)
+  </insert>
+  
+  <select id="selectAll" resultType="user">
+  	select id, username, password, isAdmin, create_time as createTime from user order by id;
+  </select>
+ 
+</mapper>

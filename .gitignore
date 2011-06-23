@@ -1,0 +1,13 @@
+*.[ao]
+*~
+*.class
+*.jar
+targe/
+classes/
+.metadata/
+.settings/
+.classpath
+.project
+logs/
+lib/
+.svn/

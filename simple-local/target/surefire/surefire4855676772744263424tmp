@@ -1,0 +1,5 @@
+#surefire
+#Wed Jun 01 23:06:24 CST 2011
+user.dir=F\:\\workspace\\simple-local
+localRepository=F\:\\maven\\repository
+basedir=F\:\\workspace\\simple-local

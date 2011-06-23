@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ncs.myblog.dao.ArticleMapper">
+
+  <select id="getById" parameterType="long" resultType="article">
+  	select id, title, content, author, subject, create_time as createTime from article where id = #{id}
+  </select>
+  
+  <insert id="insert" parameterType="article" useGeneratedKeys="true" keyProperty="id">
+  	insert into article(id, title, content, author, subject, create_time)
+  		      values(#{id}, #{title}, #{content}, #{author}, #{subject}, CURRENT_TIMESTAMP)
+  </insert>
+  
+  <select id="selectAll" resultType="article">
+  	select id, title, content, author , subject, create_time as createTime from article order by id;
+  </select>
+ 
+</mapper>
