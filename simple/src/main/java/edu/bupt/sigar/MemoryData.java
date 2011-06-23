@@ -33,10 +33,6 @@ public class MemoryData {
 		System.out.println(System.getProperty("java.library.path"));
 		Sigar sigar = new Sigar();
 		CpuPerc cpuPerc = sigar.getCpuPerc();
-		for(double d:sigar.getLoadAverage()){
-			System.out.println(d);
-		}
-//		
 		DecimalFormat df = new DecimalFormat();
 		System.out.println(df.format(cpuPerc.getCombined()));
 	}
