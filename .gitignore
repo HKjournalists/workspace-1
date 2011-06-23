@@ -2,8 +2,8 @@
 *~
 *.class
 *.jar
-targe/
 classes/
+target/
 .metadata/
 .settings/
 .classpath
