@@ -1,0 +1,2 @@
+CNY=CNY,RMB,rmb,Renminbi,Renminbi Yuan,￥
+USD=USD,$,U.S.Dollar

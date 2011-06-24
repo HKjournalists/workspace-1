@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dwr PUBLIC "-//GetAhead Limited//DTD Direct Web Remoting 1.0//EN" "dwr10.dtd" >
+<dwr>
+ <allow>
+  <create javascript="JsonParse" creator="new"  scope="request">
+   		 <param name="class" value="com.base.dwr.JsonParse"/>   
+  </create>  
+  <create javascript="Schedule" creator="new"  scope="request">
+   		 <param name="class" value="com.base.dwr.ScheduleDWR"/>   
+  </create>  
+  <convert converter="bean" match="com.qunar.deals.util.RouteDetail" />
+  <convert converter="bean" match="com.qunar.deals.util.ShipDetail" />
+  <convert converter="bean" match="com.qunar.deals.util.Itinerary" />
+ </allow> 
+  
+</dwr>

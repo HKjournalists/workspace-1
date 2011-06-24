@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+        "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<include file="struts-default.xml" />
+	<constant name="struts.locale" value="zh_CN" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.dispatcher.parametersWorkaround" value="true" />
+
+	<!-- 用于CRUD Action的parent package -->
+	<package name="crud-default" extends="struts-default">
+		<!-- 基于paramsPrepareParamsStack, 增加store interceptor保证actionMessage在redirect后不会丢失 -->
+		<interceptors>
+			<interceptor-stack name="crudStack">
+				<interceptor-ref name="store">
+					<param name="operationMode">AUTOMATIC</param>
+				</interceptor-ref>
+				<interceptor-ref name="paramsPrepareParamsStack" />
+			</interceptor-stack>
+		</interceptors>
+
+		<default-interceptor-ref name="crudStack" />
+	</package>
+
+	<package name="user" extends="crud-default" namespace="/user">
+		<action name="admin" class="com.ncs.myblog.web.UserAction"
+			method="admin">
+			<result name="success">/WEB-INF/pages/user/admin.jsp</result>
+			<result name="error">/WEB-INF/pages/user/not_admin.jsp</result>
+		</action>
+		
+		<action name="renderCreateUser" class="com.ncs.myblog.web.UserAction"
+			method="renderToCreateUser">
+			<result name="success">/WEB-INF/pages/user/create_user.jsp</result>
+		</action>
+
+		<action name="createUser" class="com.ncs.myblog.web.UserAction"
+			method="createUser">
+			<result name="success">/WEB-INF/pages/user/create_success.jsp</result>
+			<result name="input">/WEB-INF/pages/user/create_user.jsp</result>
+		</action>
+
+		<action name="listUser" class="com.ncs.myblog.web.UserAction"
+			method="userList">
+			<result name="success">/WEB-INF/pages/user/user_list.jsp</result>
+		</action>
+
+		<action name="logOnUser" class="com.ncs.myblog.web.UserAction"
+			method="logOnUser">
+			<result name="success">/WEB-INF/pages/user/logon_user.jsp</result>
+		</action>
+
+		<action name="logResult" class="com.ncs.myblog.web.UserAction"
+			method="logResult">
+			<result name="success">/index.jsp</result>
+			<result name="input">/WEB-INF/pages/user/logon_user.jsp</result>
+		</action>
+	</package>
+
+	<package name="article" extends="crud-default" namespace="/article">
+		<action name="renderToCreateArticle" class="com.ncs.myblog.web.ArticleAction"
+			method="renderToCreateArticle">
+			<result name="success">/WEB-INF/pages/article/new_article.jsp</result>
+		</action>
+
+		<action name="writeArticle" class="com.ncs.myblog.web.ArticleAction"
+			method="writeArticle">
+			<result name="success">/WEB-INF/pages/article/new_article.jsp</result>
+			<result name="error">/WEB-INF/pages/article/error.jsp</result>
+		</action>
+
+		<action name="displayArticle" class="com.ncs.myblog.web.ArticleAction"
+			method="displayArticle">
+			<result name="success">/WEB-INF/pages/article/display_article.jsp</result>
+		</action>
+		
+		<action name="displayOne" class="com.ncs.myblog.web.ArticleAction"
+			method="displayOne">
+			<result name="success">/WEB-INF/pages/article/display_one.jsp</result>
+		</action>
+	</package>
+</struts>

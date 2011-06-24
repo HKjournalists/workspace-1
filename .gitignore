@@ -2,8 +2,12 @@
 *~
 *.class
 *.jar
+classes/
 target/
 .metadata/
 .settings/
 .classpath
 .project
+logs/
+lib/
+.svn/

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Qunar" default="jars">
+
+	<property name="project.jar" value="deals_wrapper.jar" />
+	<property name="deals_wrapper.home" value="C:/wrapper/deals_wrapper" />
+	<property name="deals_wrapper.src" value="src" />
+	<property name="deals_wrapper.build" value="bin" />
+	<property name="deals_wrapper.lib" value="deals/WEB-INF/lib" />
+
+	<target name="compile" description="编译源码">
+		<delete dir="${deals_wrapper.build}" />
+		<mkdir dir="${deals_wrapper.build}" />
+
+		<copy todir="${deals_wrapper.build}">
+			<fileset dir="${deals_wrapper.src}">
+				<include name="**/**" />
+			</fileset>
+		</copy>
+
+		<javac srcdir="${deals_wrapper.src}" destdir="${deals_wrapper.build}" optimize="on" debug="on" deprecation="on" encoding="UTF-8">
+			<classpath>
+				<fileset dir="${deals_wrapper.lib}">
+					<include name="**/*.jar" />
+				</fileset>
+			</classpath>
+		</javac>
+	</target>
+
+
+	<target name="jars" depends="compile">
+		<jar basedir="${deals_wrapper.build}" jarfile="${deals_wrapper.lib}/${project.jar}" />
+	</target>
+
+	<target name="debug" depends="compile">
+		<java classname="${main.class}" fork="true" failonerror="true">
+			<jvmarg value="-Xdebug" />
+			<jvmarg value="-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=1044" />
+			<classpath refid="classpath" />
+		</java>
+	</target>
+
+	<target name="run" depends="compile">
+		<java classname="${main.class}" fork="true" failonerror="true">
+			<jvmarg value="-Xmx512m" />
+			<classpath refid="classpath" />
+		</java>
+	</target>
+
+</project>

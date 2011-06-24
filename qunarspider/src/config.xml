@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pools>
+	<pool>
+		<name>route</name>
+		<username>root</username>
+		<password>root</password>
+		<jdbcurl>jdbc:mysql://localhost/db1</jdbcurl>
+		<max>10</max>
+		<wait></wait>
+		<driver>com.mysql.jdbc.Driver</driver>
+	</pool>
+</pools>
