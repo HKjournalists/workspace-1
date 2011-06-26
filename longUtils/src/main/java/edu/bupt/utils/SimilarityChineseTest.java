@@ -5,11 +5,8 @@
 package edu.bupt.utils;
 
 import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
@@ -20,12 +17,8 @@ public class SimilarityChineseTest {
     public SimilarityChineseTest() {
     }
 
-    @BeforeClass
+    @Before
     public static void setUpClass() throws Exception {
-    }
-
-    @AfterClass
-    public static void tearDownClass() throws Exception {
     }
 
     @Before

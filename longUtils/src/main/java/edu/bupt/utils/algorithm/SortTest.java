@@ -5,10 +5,9 @@
 package edu.bupt.utils.algorithm;
 
 import java.util.Arrays;
+
 import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
@@ -18,14 +17,6 @@ import org.junit.Test;
 public class SortTest {
 
     public SortTest() {
-    }
-
-    @BeforeClass
-    public static void setUpClass() throws Exception {
-    }
-
-    @AfterClass
-    public static void tearDownClass() throws Exception {
     }
 
     @Before
