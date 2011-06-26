@@ -5,9 +5,6 @@ import java.util.concurrent.BlockingQueue;
 
 import org.apache.log4j.Logger;
 
-import edu.bupt.qunar.database.dataexport.SightExport;
-
-
 public class FunctionThreadPoolTask implements Runnable, Serializable {
 
 	/**
@@ -49,8 +46,6 @@ public class FunctionThreadPoolTask implements Runnable, Serializable {
 			//            ParentTree.updateElement(info, parentId);
 			//            Gis.dealpNode(info, parentId);
 			//            PerfectImage.downloadAndName(info);
-			SightExport.selectFromSight(info);
-
 		} catch (Exception e) {
 			log.error(info + "\t产生异常！", e);
 		} finally {
