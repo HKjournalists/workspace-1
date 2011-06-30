@@ -157,6 +157,14 @@
 		</dependency>
 		<!-- threadpool utils end -->
 
+		<!-- rpc utils -->
+		<dependency>
+			<groupId>org.apache.thrift</groupId>
+			<artifactId>libthrift</artifactId>
+			<version>0.6.1</version>
+		</dependency>
+		<!-- rpc utils end -->
+
 	</dependencies>
 
 	<build>
