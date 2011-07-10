@@ -39,11 +39,12 @@ public class FileUtil {
 	 *            true changing to the same width and height false not chage
 	 * @throws IOException
 	 */
-	public static void copyJPEG(String frompath, String topath, boolean change) throws IOException {
-		File from = new File(frompath); //读入文件
-		Image src = ImageIO.read(from); //构造Image对象
-		int width = src.getWidth(null); //得到源图宽
-		int height = src.getHeight(null); //得到源图长
+	public static void copyJPEG(String frompath, String topath, boolean change)
+			throws IOException {
+		File from = new File(frompath); // 读入文件
+		Image src = ImageIO.read(from); // 构造Image对象
+		int width = src.getWidth(null); // 得到源图宽
+		int height = src.getHeight(null); // 得到源图长
 
 		/*
 		 * //绘制缩小后的图 BufferedImage tag = new
@@ -55,13 +56,14 @@ public class FileUtil {
 			height = CHANGE_HEIGHT;
 		}
 
-		BufferedImage tag = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+		BufferedImage tag = new BufferedImage(width, height,
+				BufferedImage.TYPE_INT_RGB);
 
 		tag.getGraphics().drawImage(src, 0, 0, width, height, null);
-		FileOutputStream out = new FileOutputStream(topath); //输出到文件流
+		FileOutputStream out = new FileOutputStream(topath); // 输出到文件流
 		JPEGImageEncoder encoder = JPEGCodec.createJPEGEncoder(out);
 
-		encoder.encode(tag); //JPEG编码
+		encoder.encode(tag); // JPEG编码
 		out.close();
 	}
 
@@ -69,7 +71,8 @@ public class FileUtil {
 		boolean result = false;
 		int tryCount = 0;
 		while (!result && tryCount++ < 10) {
-			logger.debug("try to delete file " + f.getName() + " cnt:" + tryCount);
+			logger.debug("try to delete file " + f.getName() + " cnt:"
+					+ tryCount);
 			System.gc();
 			result = f.delete();
 		}
