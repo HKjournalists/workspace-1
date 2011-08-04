@@ -1,7 +1,0 @@
-{
-"protocol" : "MyProtocolAvpr",
-  "namespace" : "mynamespaceavpr",
-  "types" : [ ],
-  "messages" : {
-  }
-}

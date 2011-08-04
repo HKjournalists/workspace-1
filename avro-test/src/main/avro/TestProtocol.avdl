@@ -1,4 +1,0 @@
-@namespace("com.ncs.service")
-protocol TestProtocol{
-	string hello(string greeting);
-}
