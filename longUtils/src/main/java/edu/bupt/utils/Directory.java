@@ -89,14 +89,10 @@ public final class Directory {
 
 	// Simple validation test:
 	public static void main(String[] args) {
-//		if (args.length == 0)
-//			System.out.println(walk(".", "PPrint.java"));
-//		else
-//			for (String arg : args)
-//				System.out.println(walk(arg));
-            File[] temp = local("H:\\Java work\\longUtils\\Image\\baidu\\", ".*?\\.jpg");
-            for(int i = 0;i<temp.length;i++){
-                System.out.println(temp[i].getAbsolutePath());
-            }
+	if (args.length == 0)
+	    System.out.println(walk(".", "PPrint.java"));
+	else
+	    for (String arg : args)
+		System.out.println(walk(arg));
 	}
 } // /:~

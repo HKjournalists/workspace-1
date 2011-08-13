@@ -21,8 +21,8 @@ public class UpdateStatus {
     	System.setProperty("weibo4j.oauth.consumerSecret", Weibo.CONSUMER_SECRET);
         try {
         	Weibo weibo = new Weibo();
-			weibo.setToken(args[0],args[1]);
-        	Status status = weibo.updateStatus("夜深了，人睡了。");
+			weibo.setToken();
+        	Status status = weibo.updateStatus("生当如夏花之绚烂。 -- from my lovely doggy.");
         	System.out.println(status.getId() + " : "+ status.getText()+"  "+status.getCreatedAt());
         	
 		} catch (Exception e) {

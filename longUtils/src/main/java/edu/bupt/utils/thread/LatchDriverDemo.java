@@ -33,7 +33,8 @@ public class LatchDriverDemo {
         System.out.println("all worker take time(ms) :" + (end - start) / 1000000);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
+	LatchDriverDemo.testLatchDriver();
     }
 }
 
@@ -61,8 +62,9 @@ class LatchWorker implements Runnable {
     void doWork() {
         System.out.println(Thread.currentThread().getName() + " is working...");
         int sum = 0;
-        for (int i = 0; i < 10000000; i++) {
+        for (int i = 0; i < 1000000000; i++) {
             sum += i;
         }
+        System.out.println(sum);
     }
 }

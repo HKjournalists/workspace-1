@@ -33,23 +33,31 @@ import weibo4j.Status;
 /**
  * Example application that uses OAuth method to acquire access to your account.<br>
  * This application illustrates how to use OAuth method with Weibo4J.<br>
- * Usage: java -DWeibo4j.oauth.consumerKey=[consumer key] -DWeibo4j.oauth.consumerSecret=[consumer secret] Weibo4j.examples.OAuthUpdate [message]
+ * Usage: java -DWeibo4j.oauth.consumerKey=[consumer key]
+ * -DWeibo4j.oauth.consumerSecret=[consumer secret] Weibo4j.examples.OAuthUpdate
+ * [message]
+ * 
  * @author Yusuke Yamamoto - yusuke at mac.com
  */
 public class OAuthSetTokenUpdate {
 	/**
-	 * Usage: java -DWeibo4j.oauth.consumerKey=[consumer key] -DWeibo4j.oauth.consumerSecret=[consumer secret] Weibo4j.examples.OAuthUpdate [message]
-	 * @param args message
+	 * Usage: java -DWeibo4j.oauth.consumerKey=[consumer key]
+	 * -DWeibo4j.oauth.consumerSecret=[consumer secret]
+	 * Weibo4j.examples.OAuthUpdate [message]
+	 * 
+	 * @param args
+	 *            message
 	 */
 	public static void main(String[] args) {
 		try {
 			if (args.length < 3) {
-				System.out.println(
-				"Usage: java Weibo4j.examples.Update token tokenSecret text");
-				System.exit( -1);
+				System.out
+						.println("Usage: java Weibo4j.examples.Update token tokenSecret text");
+				System.exit(-1);
 			}
 			System.setProperty("Weibo4j.oauth.consumerKey", Weibo.CONSUMER_KEY);
-			System.setProperty("Weibo4j.oauth.consumerSecret", Weibo.CONSUMER_SECRET);        	
+			System.setProperty("Weibo4j.oauth.consumerSecret",
+					Weibo.CONSUMER_SECRET);
 			Weibo weibo = new Weibo();
 
 			/*
@@ -58,14 +66,15 @@ public class OAuthSetTokenUpdate {
 			weibo.setToken(args[0], args[1]);
 
 			Status status = weibo.updateStatus(args[2]);
-			System.out.println("Successfully updated the status to [" + status.getText() + "].");
+			System.out.println("Successfully updated the status to ["
+					+ status.getText() + "].");
 			System.exit(0);
 		} catch (WeiboException te) {
 			System.out.println("Failed to get timeline: " + te.getMessage());
-			System.exit( -1);
+			System.exit(-1);
 		} catch (Exception ioe) {
 			System.out.println("Failed to read the system input.");
-			System.exit( -1);
+			System.exit(-1);
 		}
 	}
 }

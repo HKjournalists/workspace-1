@@ -4,6 +4,7 @@ package edu.bupt.utils;
 
 import java.util.*;
 
+@SuppressWarnings("serial")
 public class CollectionData<T> extends ArrayList<T> {
 
     public CollectionData(Generator<T> gen, int quantity) {

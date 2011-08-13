@@ -83,7 +83,7 @@
 					<archive>
 						<index>true</index>
 						<manifest>
-							<mainClass>edu.bupt.quartz.Main</mainClass>
+							<!-- <mainClass>edu.bupt.quartz.Main</mainClass> -->
 							<addClasspath>true</addClasspath>
 							<!-- 追加前缀 -->
 							<classpathPrefix>lib/</classpathPrefix>

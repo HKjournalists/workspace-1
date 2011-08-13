@@ -18,7 +18,7 @@ public class VerifyCredentials {
     	System.setProperty("weibo4j.oauth.consumerSecret", Weibo.CONSUMER_SECRET);
 		try {
 			Weibo weibo = new Weibo();
-			weibo.setToken(args[0],args[1]);
+			weibo.setToken();
 			User user = weibo.verifyCredentials();
 			System.out.println(user.toString());
 		} catch (WeiboException e) {
